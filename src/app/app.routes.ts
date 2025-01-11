@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { Part1AngularComponent } from './part-1-angular/part-1-angular.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'angular', pathMatch: 'full' },
@@ -9,6 +7,13 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./part-1-angular/part-1-angular.routes').then(
         (r) => r.part1AngularRoutes,
+      ),
+  },
+  {
+    path: 'design',
+    loadChildren: () =>
+      import('./part-2-design/part-2-design.routes').then(
+        (r) => r.part2DesignRoutes,
       ),
   },
 ];

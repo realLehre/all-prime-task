@@ -1,5 +1,4 @@
-import { Route, Routes } from '@angular/router';
-import { GridEditingComponent } from './grid-editing/grid-editing.component';
+import { Routes } from '@angular/router';
 
 export const part1AngularRoutes: Routes = [
   {
@@ -7,7 +6,7 @@ export const part1AngularRoutes: Routes = [
     loadComponent: () =>
       import('./part-1-angular.component').then((c) => c.Part1AngularComponent),
     children: [
-      { path: '', redirectTo: 'grid-editing', pathMatch: 'full' },
+      { path: '', redirectTo: 'grid-paging', pathMatch: 'full' },
       {
         path: 'grid-editing',
         loadComponent: () =>
