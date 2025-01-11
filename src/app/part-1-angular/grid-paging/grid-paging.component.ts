@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import {
+  IgxCellTemplateDirective,
+  IgxColumnComponent,
+  IgxGridComponent,
+  IgxLinearProgressBarComponent,
+  IgxPaginatorComponent,
+} from 'igniteui-angular';
+import { DecimalPipe } from '@angular/common';
+import { GridPagingService } from './services/grid-paging.service';
 
 @Component({
   selector: 'app-grid-paging',
-  imports: [],
+  imports: [
+    IgxGridComponent,
+    IgxColumnComponent,
+    IgxPaginatorComponent,
+    DecimalPipe,
+    IgxCellTemplateDirective,
+    IgxLinearProgressBarComponent,
+  ],
   templateUrl: './grid-paging.component.html',
-  styleUrl: './grid-paging.component.scss'
+  styleUrl: './grid-paging.component.scss',
 })
 export class GridPagingComponent {
-
+  private readonly pagingService = inject(GridPagingService);
+  data = this.pagingService.athletesData;
 }
