@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   IgxCellTemplateDirective,
   IgxColumnComponent,
@@ -21,6 +21,7 @@ import { GridPagingService } from './services/grid-paging.service';
   ],
   templateUrl: './grid-paging.component.html',
   styleUrl: './grid-paging.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridPagingComponent {
   private readonly pagingService = inject(GridPagingService);
