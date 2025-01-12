@@ -1,0 +1,76 @@
+<div
+  class="container-fluid d-flex flex-column pt-2"
+  style="height: calc(100vh - 150px)"
+>
+  <div class="d-flex align-items-center mb-4 w-100">
+    <a class="text-dark me-auto"><i class="bi bi-arrow-left fs-4"></i></a>
+    <h5 class="m-0 text-center flex-grow-1">BT01191918898</h5>
+  </div>
+
+  <div
+    class="text-center d-flex flex-column justify-content-center align-items-center battery-indicator mb-3"
+  >
+    <div class="battery-container mb-2">
+      <div class="battery"></div>
+      <div class="front-border"></div>
+    </div>
+    <div>
+      <span class="me-2"> 88%</span>
+      <span>{{ date | date: "MMM dd, yyyy  hh:mm a" }}</span>
+    </div>
+  </div>
+
+  <div class="flex-grow-1 d-flex align-items-center justify-content-center">
+    <div class="text-center">
+      <div class="bluetooth-circle mb-4">
+        <i
+          class="bi bi-bluetooth text-primary mb-2"
+          style="font-size: 3rem"
+        ></i>
+        <span class="text-primary">Connectable</span>
+      </div>
+
+      <div class="text-center">
+        <i class="bi bi-bluetooth text-secondary"></i>
+        <div class="text-secondary">Bluetooth</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-nav py-2">
+    <div class="row text-center g-0">
+      <div class="col">
+        <a class="text-primary text-decoration-none">
+          <div class="nav-icon nav-icon-active mx-auto">
+            <i class="bi bi-house-door"></i>
+          </div>
+          <small>Away mode</small>
+        </a>
+      </div>
+      <div class="col">
+        <a class="text-secondary text-decoration-none">
+          <div class="nav-icon nav-icon-inactive mx-auto">
+            <i class="bi bi-bell"></i>
+          </div>
+          <small>Activities</small>
+        </a>
+      </div>
+      <div class="col">
+        <a class="text-secondary text-decoration-none">
+          <div class="nav-icon nav-icon-inactive mx-auto">
+            <i class="bi bi-share"></i>
+          </div>
+          <small>Share</small>
+        </a>
+      </div>
+      <div class="col">
+        <a class="text-secondary text-decoration-none">
+          <div class="nav-icon nav-icon-inactive mx-auto">
+            <i class="bi bi-gear"></i>
+          </div>
+          <small>Settings</small>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

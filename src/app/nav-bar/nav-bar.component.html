@@ -5,46 +5,80 @@
         Go to {{ baseUrl === "angular" ? "Design Page" : "Angular Page" }}
       </button>
 
-      <div class="" id="navbarNav">
-        <ul class="d-flex align-items-center gap-3 m-0 p-0">
-          <li class="">
-            <a
-              class="nav-link"
-              routerLink="/angular/grid-paging"
-              routerLinkActive="text-primary"
-              [routerLinkActiveOptions]="{ exact: true }"
-              >Grid1</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLink="/angular/grid-sorting"
-              routerLinkActive="text-primary"
-              [routerLinkActiveOptions]="{ exact: true }"
-              >Grid2</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLink="/angular/grid-filtering"
-              routerLinkActive="text-primary"
-              [routerLinkActiveOptions]="{ exact: true }"
-              >Grid3</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              routerLink="/angular/grid-editing"
-              routerLinkActive="text-primary"
-              [routerLinkActiveOptions]="{ exact: true }"
-              >Grid4</a
-            >
-          </li>
-        </ul>
-      </div>
+      @if (baseUrl === "angular") {
+        <div class="" id="navbarNav">
+          <ul class="d-flex align-items-center gap-3 m-0 p-0">
+            <li class="">
+              <a
+                class="nav-link"
+                routerLink="/angular/grid-paging"
+                routerLinkActive="text-primary"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Grid1</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/angular/grid-sorting"
+                routerLinkActive="text-primary"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Grid2</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/angular/grid-filtering"
+                routerLinkActive="text-primary"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Grid3</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/angular/grid-editing"
+                routerLinkActive="text-primary"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Grid4</a
+              >
+            </li>
+          </ul>
+        </div>
+      } @else {
+        <div>
+          <ul class="d-flex align-items-center gap-3 m-0 p-0">
+            <li class="">
+              <a
+                class="nav-link"
+                routerLink="/design/page-1"
+                routerLinkActive="text-primary"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Page 1</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/design/page-2"
+                routerLinkActive="text-primary"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Page 2</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/design/page-3"
+                routerLinkActive="text-primary"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Page 3</a
+              >
+            </li>
+          </ul>
+        </div>
+      }
     </div>
   </nav>
 </div>
