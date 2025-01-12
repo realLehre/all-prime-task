@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Signal,
+  ViewChild,
+  viewChild,
+} from '@angular/core';
 import { GirdSortingService } from './services/gird-sorting.service';
 import {
   DefaultSortingStrategy,
@@ -37,9 +45,12 @@ import { UpperCasePipe } from '@angular/common';
   styleUrl: './grid-sorting.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GridSortingComponent {
+export class GridSortingComponent implements AfterViewInit {
   private readonly gridSortingService = inject(GirdSortingService);
-  public grid1!: IgxGridComponent;
+  grid1: Signal<IgxGridComponent | any> = viewChild('grid1', {
+    read: IgxGridComponent,
+  });
+
   public data: ISortData[] = this.gridSortingService.sortData;
   public sortingTypes: ISortingOptions[] = [
     {
@@ -52,7 +63,7 @@ export class GridSortingComponent {
   public sortingOptions: ISortingOptions = this.sortingTypes[1];
 
   public ngAfterViewInit(): void {
-    this.grid1.sortingExpressions = [
+    this.grid1().sortingExpressions = [
       {
         dir: SortingDirection.Asc,
         fieldName: 'CategoryName',
